@@ -14,11 +14,11 @@ export default function Footer() {
         <div>
           <div className="font-medium">Quick Links</div>
           <ul className="mt-3 space-y-2 text-sm">
-            <li><Link className="hover:underline" href="/about">About Our Mission</Link></li>
-            <li><Link className="hover:underline" href="/get-involved">Volunteer Opportunities</Link></li>
-            <li><Link className="hover:underline" href="/technical-specs">Technical Specifications</Link></li>
-            <li><Link className="hover:underline" href="/impact">Impact Stories</Link></li>
-            <li><Link className="hover:underline" href="/contact">Contact Information</Link></li>
+            <li><Link className="hover:underline" href="/about">About</Link></li>
+            <li><Link className="hover:underline" href="/support">Support</Link></li>
+            <li><Link className="hover:underline" href="/challenge">Why It Matters</Link></li>
+            <li><Link className="hover:underline" href="/news">News</Link></li>
+            <li><Link className="hover:underline" href="/contact">Contact</Link></li>
           </ul>
         </div>
         <div>

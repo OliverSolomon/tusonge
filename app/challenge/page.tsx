@@ -5,12 +5,39 @@ export const metadata: Metadata = {
   description: "Kenya's mobility crisis, infrastructure barriers, and intersectional vulnerabilities.",
 };
 
+import Image from "next/image";
+
 export default function ChallengePage() {
   return (
-    <div className="mx-auto max-w-5xl px-4 sm:px-6 py-12">
-      <h1 className="text-3xl font-semibold tracking-tight">The Challenge</h1>
+    <div className="mx-auto max-w-6xl px-4 sm:px-6 py-12">
+      <h1 className="text-3xl font-semibold tracking-tight">Why It Matters</h1>
 
-      <section className="mt-6 space-y-4">
+      {/* Impactful visual */}
+      <section className="mt-6">
+        <div className="relative rounded-lg overflow-hidden border border-black/10 dark:border-white/15 min-h-[60vh]">
+          {/* Soft background */}
+          <Image
+            src="/Sample-why-side-view-dreamy-man-wheelchair-african-american-man-casual-clothes-embankment-looking-water-city-background-portrait-beauty-happiness-concept.jpg"
+            alt=""
+            aria-hidden
+            fill
+            sizes="100vw"
+            className="object-cover blur-lg scale-110 opacity-50"
+            priority={false}
+          />
+          {/* Foreground full subject */}
+          <Image
+            src="/Sample-why-side-view-dreamy-man-wheelchair-african-american-man-casual-clothes-embankment-looking-water-city-background-portrait-beauty-happiness-concept.jpg"
+            alt="Kenya’s mobility story — dignity, aspiration, and access"
+            fill
+            sizes="100vw"
+            className="object-contain"
+            priority={false}
+          />
+        </div>
+      </section>
+
+      <section className="mt-8 space-y-4">
         <h2 className="text-xl font-medium">Kenya's Mobility Crisis</h2>
         <p>
           4.44 million Kenyans live with disabilities (10% of the population). 1.16 million face mobility challenges that limit access to education, employment, healthcare, and social participation.

@@ -86,7 +86,7 @@ export default function Home() {
           </div>
           <div className="md:col-span-1">
             <div className="max-w-sm ml-auto">
-              <ScrollVideo src="/sample-attachmentStyle.mp4" poster="/sample-3rdwheel.png" autoplay playbackRate={0.6} loop />
+              <ScrollVideo src="/sample-attachmentStyle.mp4" poster="/sample-3rdwheel.png" autoplay normalizeToSeconds={30} loop />
             </div>
           </div>
         </div>

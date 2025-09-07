@@ -8,14 +8,10 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const nav = [
     { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/challenge", label: "The Challenge" },
+    { href: "/challenge", label: "Why It Matters" },
     { href: "/solution", label: "Our Solution" },
-    { href: "/impact", label: "Impact" },
-    { href: "/get-involved", label: "Get Involved" },
-    { href: "/donate", label: "Donate" },
-    { href: "/news", label: "News" },
-    { href: "/technical-specs", label: "Technical" },
+    { href: "/support", label: "Support" },
+    { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" }
   ];
 

@@ -10,10 +10,11 @@ type Props = {
   autoplay?: boolean;
   playbackRate?: number; // e.g. 0.6 for slower playback
   loop?: boolean;
+  normalizeToSeconds?: number; // when set, adjust playbackRate so one loop ≈ this duration
 };
 
 // A versatile video: scroll-scrub by default; when autoplay is true, plays at given rate and loops.
-export default function ScrollVideo({ src, poster, className, autoplay = false, playbackRate = 0.75, loop = false }: Props) {
+export default function ScrollVideo({ src, poster, className, autoplay = false, playbackRate = 0.75, loop = false, normalizeToSeconds }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [duration, setDuration] = useState(0);
@@ -46,7 +47,15 @@ export default function ScrollVideo({ src, poster, className, autoplay = false, 
     if (!vid) return;
     const setRate = () => {
       try {
-        vid.playbackRate = playbackRate;
+        const d = vid.duration || duration;
+        let rate = playbackRate;
+        if (normalizeToSeconds && d > 0) {
+          rate = d / normalizeToSeconds; // e.g., if d=10s and normalize=30s => 0.333x
+        }
+        // Clamp to reasonable bounds
+        if (!isFinite(rate) || rate <= 0) rate = 0.1;
+        if (rate > 4) rate = 4;
+        vid.playbackRate = rate;
       } catch {}
     };
     const tryPlay = async () => {
@@ -61,7 +70,7 @@ export default function ScrollVideo({ src, poster, className, autoplay = false, 
     const onMeta = () => setRate();
     vid.addEventListener("loadedmetadata", onMeta);
     return () => vid.removeEventListener("loadedmetadata", onMeta);
-  }, [autoplay, playbackRate]);
+  }, [autoplay, playbackRate, normalizeToSeconds, duration]);
 
   return (
     <div ref={containerRef} className={className}>
