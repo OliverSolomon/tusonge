@@ -1,32 +1,55 @@
 import Link from "next/link";
+import Image from "next/image";
+import ScrollVideo from "../components/ScrollVideo";
 
 export default function Home() {
   return (
     <div className="bg-background text-foreground">
       {/* Hero */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 pt-14 pb-16 grid md:grid-cols-2 gap-10 items-center">
-        <div>
-          <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight">
-            Breaking Barriers, Building Independence
-          </h1>
-          <p className="mt-4 text-lg text-black/75 dark:text-white/75">
-            Transforming manual wheelchairs into powered mobility solutions for Kenya's 1.16 million citizens with mobility disabilities.
-          </p>
-          <p className="mt-4 text-base text-black/70 dark:text-white/70">
-            Through innovative engineering and sustainable design, Tusonge develops affordable wheelchair attachments that restore independence, create economic opportunities, and build safer communities across East Africa.
-          </p>
-          <div className="mt-6 flex gap-3">
-            <Link href="/get-involved" className="inline-flex items-center rounded-md bg-foreground text-background px-4 py-2 text-sm font-medium hover:opacity-90">
-              Join Our Mission
-            </Link>
-            <Link href="#impact" className="inline-flex items-center rounded-md border border-black/15 dark:border-white/20 px-4 py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10">
-              See Our Impact
-            </Link>
+      <section className="relative">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 grid md:grid-cols-2 gap-10 items-center pt-14 pb-16 relative z-10">
+          <div>
+            <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight">
+              Breaking Barriers, Building Independence
+            </h1>
+            <p className="mt-4 text-lg text-black/75 dark:text-white/75">
+              Transforming manual wheelchairs into powered mobility solutions for Kenya's 1.16 million citizens with mobility disabilities.
+            </p>
+            <p className="mt-4 text-base text-black/70 dark:text-white/70">
+              Through innovative engineering and sustainable design, Tusonge develops affordable wheelchair attachments that restore independence, create economic opportunities, and build safer communities across East Africa.
+            </p>
+            <div className="mt-6 flex gap-3">
+              <Link href="/get-involved" className="inline-flex items-center rounded-md bg-foreground text-background px-4 py-2 text-sm font-medium hover:opacity-90">
+                Join Our Mission
+              </Link>
+              <Link href="#impact" className="inline-flex items-center rounded-md border border-black/15 dark:border-white/20 px-4 py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10">
+                See Our Impact
+              </Link>
+            </div>
+          </div>
+          <div className="relative h-80 sm:h-[30rem] rounded-lg overflow-hidden border border-black/10 dark:border-white/15">
+            {/* Background blur for premium look */}
+            <Image
+              src="/sample-hero-oliver-tusonge.png"
+              alt=""
+              aria-hidden
+              fill
+              sizes="100vw"
+              className="object-cover blur-xl scale-110 opacity-50"
+              priority
+            />
+            {/* Foreground image contained so full subject is visible */}
+            <Image
+              src="/sample-hero-oliver-tusonge.png"
+              alt="Tusonge hero — wheelchair on Kenyan terrain"
+              fill
+              sizes="100vw"
+              className="object-contain"
+              priority
+            />
           </div>
         </div>
-        <div className="relative aspect-video rounded-lg border border-black/10 dark:border-white/15 bg-gradient-to-br from-zinc-100 to-zinc-200 dark:from-zinc-900 dark:to-zinc-800 grid place-items-center text-sm text-black/60 dark:text-white/60">
-          Hero media placeholder — add photo/video of device on Kenyan terrain
-        </div>
+        <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-b from-background via-transparent to-background/60" />
       </section>
 
       {/* Problem Statement */}
@@ -47,6 +70,25 @@ export default function Home() {
               <div className="text-sm text-black/70 dark:text-white/70">{m.v}</div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Assembly experience (compact, premium) */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 py-12 border-t border-black/10 dark:border-white/15">
+        <div className="grid md:grid-cols-3 gap-8 items-center">
+          <div className="md:col-span-2 space-y-3">
+            <h2 className="text-2xl font-semibold">Engineered to connect in seconds</h2>
+            <ul className="list-disc pl-5 text-sm text-black/80 dark:text-white/80">
+              <li>Align the front module with the wheelchair frame</li>
+              <li>Secure the universal clamps for a stable lock</li>
+              <li>Engage power — roll forward with confidence</li>
+            </ul>
+          </div>
+          <div className="md:col-span-1">
+            <div className="max-w-sm ml-auto">
+              <ScrollVideo src="/sample-attachmentStyle.mp4" poster="/sample-3rdwheel.png" autoplay playbackRate={0.6} loop />
+            </div>
+          </div>
         </div>
       </section>
 

@@ -13,7 +13,7 @@ export default function TechnicalSpecsPage() {
       <section className="mt-6 space-y-3">
         <h2 className="text-xl font-medium">Front-Attachment System</h2>
         <ul className="list-disc pl-5 text-sm text-black/80 dark:text-white/80">
-          <li>Motor: 36V 350W geared brushed DC hub, >85% efficiency</li>
+          <li>Motor: 36V 350W geared brushed DC hub, &gt;85% efficiency</li>
           <li>Battery: LiFePO4 36V 12Ah (12S), 2000+ cycles, BMS safety</li>
           <li>Range: 15–25km; Speed: 8–12 km/h; Load: up to 120kg</li>
           <li>Wheel: 18" diameter; Materials: Aluminum/steel; IP65</li>
