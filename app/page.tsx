@@ -148,11 +148,11 @@ export default function Home() {
             },
             {
               t: "Phase 2: Rear-Attachment (2026)",
-              d: "Discrete urban power assist; 20km range; lightweight 7kg; silent operation.",
+              d: "Closed spaces power assist for urban mobility; modular design with smaller footprint; 20km range; lightweight 7kg; highly maneuverable.",
             },
             {
               t: "Phase 3: AI Stairs-Climbing (2027)",
-              d: "Affordable Stair-Climbing Wheelchair.",
+              d: "Affordable Stair-Climbing Wheelchair; For safe, autonomous stair navigation.",
             },
           ].map((c) => (
             <div
