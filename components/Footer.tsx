@@ -7,37 +7,102 @@ export default function Footer() {
         <div>
           <div className="font-semibold text-lg">Tusonge</div>
           <p className="mt-2 text-sm text-black/70 dark:text-white/70">
-            Empowering independence through innovative wheelchair mobility solutions.
+            Empowering independence through innovative wheelchair mobility
+            solutions.
           </p>
-          <p className="mt-2 text-xs text-black/60 dark:text-white/60">Nairobi, Kenya</p>
+          <p className="mt-2 text-xs text-black/60 dark:text-white/60">
+            Nairobi, Kenya
+          </p>
         </div>
         <div>
           <div className="font-medium">Quick Links</div>
           <ul className="mt-3 space-y-2 text-sm">
-            <li><Link className="hover:underline" href="/about">About</Link></li>
-            <li><Link className="hover:underline" href="/support">Support</Link></li>
-            <li><Link className="hover:underline" href="/challenge">Why It Matters</Link></li>
-            <li><Link className="hover:underline" href="/news">News</Link></li>
-            <li><Link className="hover:underline" href="/contact">Contact</Link></li>
+            <li>
+              <Link className="hover:underline" href="/about">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:underline" href="/support">
+                Support
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:underline" href="/challenge">
+                Why It Matters
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:underline" href="/news">
+                News
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:underline" href="/contact">
+                Contact
+              </Link>
+            </li>
           </ul>
         </div>
         <div>
           <div className="font-medium">Contact</div>
           <ul className="mt-3 space-y-2 text-sm">
-            <li><a className="hover:underline" href="mailto:info@tusonge.org">info@tusonge.org</a></li>
-            <li><a className="hover:underline" href="mailto:partnerships@tusonge.org">partnerships@tusonge.org</a></li>
-            <li><a className="hover:underline" href="mailto:volunteers@tusonge.org">volunteers@tusonge.org</a></li>
-            <li><a className="hover:underline" href="mailto:media@tusonge.org">media@tusonge.org</a></li>
+            <li>
+              <a className="hover:underline" href="mailto:info@tusonge.co.ke">
+                info@tusonge.co.ke
+              </a>
+            </li>
+            <li>
+              <a
+                className="hover:underline"
+                href="mailto:partnerships@tusonge.co.ke"
+              >
+                partnerships@tusonge.co.ke
+              </a>
+            </li>
+            <li>
+              <a
+                className="hover:underline"
+                href="mailto:volunteers@tusonge.co.ke"
+              >
+                volunteers@tusonge.co.ke
+              </a>
+            </li>
+            <li>
+              <a className="hover:underline" href="mailto:media@tusonge.co.ke">
+                media@tusonge.co.ke
+              </a>
+            </li>
           </ul>
         </div>
         <div>
           <div className="font-medium">Legal</div>
           <ul className="mt-3 space-y-2 text-sm">
-            <li><Link className="hover:underline" href="/legal/privacy">Privacy Policy</Link></li>
-            <li><Link className="hover:underline" href="/legal/terms">Terms of Use</Link></li>
-            <li><Link className="hover:underline" href="/legal/accessibility">Accessibility Statement</Link></li>
-            <li><Link className="hover:underline" href="/legal/transparency">Financial Transparency</Link></li>
-            <li><Link className="hover:underline" href="/legal/conduct">Code of Conduct</Link></li>
+            <li>
+              <Link className="hover:underline" href="/legal/privacy">
+                Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:underline" href="/legal/terms">
+                Terms of Use
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:underline" href="/legal/accessibility">
+                Accessibility Statement
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:underline" href="/legal/transparency">
+                Financial Transparency
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:underline" href="/legal/conduct">
+                Code of Conduct
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
@@ -47,4 +112,3 @@ export default function Footer() {
     </footer>
   );
 }
-

@@ -13,16 +13,26 @@ export default function Home() {
               Breaking Barriers, Building Independence
             </h1>
             <p className="mt-4 text-lg text-black/75 dark:text-white/75">
-              Transforming manual wheelchairs into powered mobility solutions for Kenya's 1.16 million citizens with mobility disabilities.
+              Transforming manual wheelchairs into powered mobility solutions
+              for Kenya's 1.16 million citizens with mobility disabilities.
             </p>
             <p className="mt-4 text-base text-black/70 dark:text-white/70">
-              Through innovative engineering and sustainable design, Tusonge develops affordable wheelchair attachments that restore independence, create economic opportunities, and build safer communities across East Africa.
+              Through innovative engineering and sustainable design, Tusonge
+              develops affordable wheelchair attachments that restore
+              independence, create economic opportunities, and build safer
+              communities across East Africa.
             </p>
             <div className="mt-6 flex gap-3">
-              <Link href="/get-involved" className="inline-flex items-center rounded-md bg-foreground text-background px-4 py-2 text-sm font-medium hover:opacity-90">
+              <Link
+                href="/get-involved"
+                className="inline-flex items-center rounded-md bg-foreground text-background px-4 py-2 text-sm font-medium hover:opacity-90"
+              >
                 Join Our Mission
               </Link>
-              <Link href="#impact" className="inline-flex items-center rounded-md border border-black/15 dark:border-white/20 px-4 py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10">
+              <Link
+                href="#impact"
+                className="inline-flex items-center rounded-md border border-black/15 dark:border-white/20 px-4 py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10"
+              >
                 See Our Impact
               </Link>
             </div>
@@ -49,25 +59,44 @@ export default function Home() {
             />
           </div>
         </div>
-        <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-b from-background via-transparent to-background/60" />
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-10 bg-gradient-to-b from-background via-transparent to-background/60"
+        />
       </section>
 
       {/* Problem Statement */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 py-12 border-t border-black/10 dark:border-white/15">
         <h2 className="text-2xl font-semibold">The Mobility Crisis in Kenya</h2>
         <p className="mt-3 text-black/75 dark:text-white/75">
-          In Kenya, mobility shouldn't determine destiny. Yet for 1.16 million citizens with mobility disabilities, physical barriers become life-limiting obstacles to education, employment, and safety.
+          In Kenya, mobility shouldn't determine destiny. Yet for 1.16 million
+          citizens with mobility disabilities, physical barriers become
+          life-limiting obstacles to education, employment, and safety.
         </p>
         <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
             { k: "1.16 million", v: "Kenyans face daily mobility barriers" },
-            { k: "66%", v: "live in rural areas with inadequate infrastructure" },
-            { k: "10.45%", v: "PWD unemployment vs 5.2% national average" },
-            { k: "83%", v: "lifetime sexual abuse risk for women with disabilities" },
+            {
+              k: "66%",
+              v: "live in rural areas with inadequate infrastructure",
+            },
+            {
+              k: "10.45%",
+              v: "Persons With Disability unemployment vs 5.2% national average",
+            },
+            {
+              k: "83%",
+              v: "lifetime sexual abuse risk for women with disabilities",
+            },
           ].map((m) => (
-            <div key={m.k} className="rounded-lg border border-black/10 dark:border-white/15 p-4">
+            <div
+              key={m.k}
+              className="rounded-lg border border-black/10 dark:border-white/15 p-4"
+            >
               <div className="text-2xl font-semibold">{m.k}</div>
-              <div className="text-sm text-black/70 dark:text-white/70">{m.v}</div>
+              <div className="text-sm text-black/70 dark:text-white/70">
+                {m.v}
+              </div>
             </div>
           ))}
         </div>
@@ -77,7 +106,9 @@ export default function Home() {
       <section className="mx-auto max-w-7xl px-4 sm:px-6 py-12 border-t border-black/10 dark:border-white/15">
         <div className="grid md:grid-cols-3 gap-8 items-center">
           <div className="md:col-span-2 space-y-3">
-            <h2 className="text-2xl font-semibold">Engineered to connect in seconds</h2>
+            <h2 className="text-2xl font-semibold">
+              Engineered to connect in seconds
+            </h2>
             <ul className="list-disc pl-5 text-sm text-black/80 dark:text-white/80">
               <li>Align the front module with the wheelchair frame</li>
               <li>Secure the universal clamps for a stable lock</li>
@@ -86,7 +117,14 @@ export default function Home() {
           </div>
           <div className="md:col-span-1">
             <div className="max-w-sm ml-auto">
-<ScrollVideo src="/sample-attachmentStyle.mp4" poster="/sample-3rdwheel.png" autoplay normalizeToSeconds={30} normalizeMobileSeconds={15} loop />
+              <ScrollVideo
+                src="/sample-attachmentStyle.mp4"
+                poster="/sample-3rdwheel.png"
+                autoplay
+                normalizeToSeconds={30}
+                normalizeMobileSeconds={15}
+                loop
+              />
             </div>
           </div>
         </div>
@@ -94,15 +132,19 @@ export default function Home() {
 
       {/* Solution Overview */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 py-12 border-t border-black/10 dark:border-white/15">
-        <h2 className="text-2xl font-semibold">Three Innovations, One Mission</h2>
+        <h2 className="text-2xl font-semibold">
+          Three Innovations, One Mission
+        </h2>
         <p className="mt-3 text-black/75 dark:text-white/75">
-          Tusonge develops three wheelchair attachments that transform standard manual wheelchairs into powered mobility solutions, designed for Kenya's terrain and social context.
+          Tusonge develops three wheelchair attachments that transform standard
+          manual wheelchairs into powered mobility solutions, designed for
+          Kenya's terrain and social context.
         </p>
         <div className="mt-6 grid md:grid-cols-3 gap-4">
           {[
             {
               t: "Phase 1: Front-Attachment (2025)",
-              d: "All-terrain powered front wheel; 15–25km range; climbs 15cm steps; recycled battery power.",
+              d: "All-terrain powered front wheel; 15–25km range; climbs 50% inclines; recycled battery power.",
             },
             {
               t: "Phase 2: Rear-Attachment (2026)",
@@ -110,13 +152,21 @@ export default function Home() {
             },
             {
               t: "Phase 3: AI Stairs-Climbing (2027)",
-              d: "AI-powered perception and control for safe, autonomous stair navigation.",
+              d: "Affordable Stair-Climbing Wheelchair.",
             },
           ].map((c) => (
-            <div key={c.t} className="rounded-lg border border-black/10 dark:border-white/15 p-4">
+            <div
+              key={c.t}
+              className="rounded-lg border border-black/10 dark:border-white/15 p-4"
+            >
               <div className="font-medium">{c.t}</div>
-              <p className="mt-2 text-sm text-black/70 dark:text-white/70">{c.d}</p>
-              <Link href="/solution" className="mt-3 inline-block text-sm underline underline-offset-4 hover:opacity-80">
+              <p className="mt-2 text-sm text-black/70 dark:text-white/70">
+                {c.d}
+              </p>
+              <Link
+                href="/solution"
+                className="mt-3 inline-block text-sm underline underline-offset-4 hover:opacity-80"
+              >
                 Learn more
               </Link>
             </div>
@@ -125,7 +175,10 @@ export default function Home() {
       </section>
 
       {/* Impact metrics */}
-      <section id="impact" className="mx-auto max-w-7xl px-4 sm:px-6 py-12 border-t border-black/10 dark:border-white/15">
+      <section
+        id="impact"
+        className="mx-auto max-w-7xl px-4 sm:px-6 py-12 border-t border-black/10 dark:border-white/15"
+      >
         <h2 className="text-2xl font-semibold">Building Measurable Change</h2>
         <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
@@ -134,9 +187,14 @@ export default function Home() {
             { k: "25%", v: "reduction in GBV incidents (target)" },
             { k: "1,000+ t", v: "e-waste recycled (planned)" },
           ].map((m) => (
-            <div key={m.k} className="rounded-lg border border-black/10 dark:border-white/15 p-4">
+            <div
+              key={m.k}
+              className="rounded-lg border border-black/10 dark:border-white/15 p-4"
+            >
               <div className="text-3xl font-semibold">{m.k}</div>
-              <div className="text-sm text-black/70 dark:text-white/70">{m.v}</div>
+              <div className="text-sm text-black/70 dark:text-white/70">
+                {m.v}
+              </div>
             </div>
           ))}
         </div>

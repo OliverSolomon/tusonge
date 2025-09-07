@@ -43,7 +43,9 @@ export default function DonateMedia() {
       <div>
         <div
           ref={containerRef}
-          className={"relative overflow-hidden rounded-lg border border-black/10 dark:border-white/15 bg-black/5 dark:bg-white/5 aspect-[16/10]"}
+          className={
+            "relative overflow-hidden rounded-lg border border-black/10 dark:border-white/15 bg-black/5 dark:bg-white/5 aspect-[16/10]"
+          }
         >
           <Image
             src={IMAGE_MAP[view].src}
@@ -102,19 +104,28 @@ export default function DonateMedia() {
       <div className="space-y-4">
         <h3 className="text-xl font-medium">Support this innovation</h3>
         <p className="text-black/75 dark:text-white/75">
-          Your contribution helps us manufacture sustainable battery packs, refine the attachment mechanics, and get devices into the hands of users across Kenya.
+          Your contribution helps us manufacture sustainable battery packs,
+          refine the attachment mechanics, and get devices into the hands of
+          users across Kenya.
         </p>
         <div className="flex gap-3">
-          <a href="mailto:donations@tusonge.org" className="inline-flex items-center rounded-md bg-foreground text-background px-4 py-2 text-sm font-medium hover:opacity-90">
+          <a
+            href="mailto:donations@tusonge.co.ke"
+            className="inline-flex items-center rounded-md bg-foreground text-background px-4 py-2 text-sm font-medium hover:opacity-90"
+          >
             Donate to this part
           </a>
-          <a href="mailto:partnerships@tusonge.org" className="inline-flex items-center rounded-md border border-black/15 dark:border-white/20 px-4 py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10">
+          <a
+            href="mailto:partnerships@tusonge.co.ke"
+            className="inline-flex items-center rounded-md border border-black/15 dark:border-white/20 px-4 py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10"
+          >
             Sponsor components
           </a>
         </div>
         <ul className="list-disc pl-5 text-sm text-black/80 dark:text-white/80">
           <li>
-            Battery focus: recycled Li-ion and LiFePO4 cells, BMS safety, pack assembly
+            Battery focus: recycled Li-ion and LiFePO4 cells, BMS safety, pack
+            assembly
           </li>
           <li>
             Attachment focus: motors, controllers, frame and clamp components
@@ -127,4 +138,3 @@ export default function DonateMedia() {
     </div>
   );
 }
-
