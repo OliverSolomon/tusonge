@@ -18,13 +18,38 @@ export const metadata: Metadata = {
   title: "Tusonge — Let's Move Forward",
   description:
     "Empowering independence through innovative, sustainable wheelchair mobility solutions built for Kenya.",
-  metadataBase: new URL("https://tusonge.org"),
+  metadataBase: new URL("https://tusonge.co.ke"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Tusonge — Let's Move Forward",
     description:
       "Transforming manual wheelchairs into powered mobility solutions across East Africa.",
+    url: "https://tusonge.co.ke/",
+    siteName: "Tusonge",
     type: "website",
     locale: "en_KE",
+    images: [
+      {
+        url: "/sample-hero-oliver-tusonge.png",
+        width: 1200,
+        height: 630,
+        alt: "Tusonge — Breaking Barriers, Building Independence",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tusonge — Let's Move Forward",
+    description:
+      "Transforming manual wheelchairs into powered mobility solutions across East Africa.",
+    images: [
+      {
+        url: "/sample-hero-oliver-tusonge.png",
+        alt: "Tusonge — Breaking Barriers, Building Independence",
+      },
+    ],
   },
 };
 
