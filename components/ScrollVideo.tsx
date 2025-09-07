@@ -10,14 +10,16 @@ type Props = {
   autoplay?: boolean;
   playbackRate?: number; // e.g. 0.6 for slower playback
   loop?: boolean;
-  normalizeToSeconds?: number; // when set, adjust playbackRate so one loop ≈ this duration
+  normalizeToSeconds?: number; // desktop/tablet normalization target in seconds
+  normalizeMobileSeconds?: number; // mobile normalization target in seconds
 };
 
 // A versatile video: scroll-scrub by default; when autoplay is true, plays at given rate and loops.
-export default function ScrollVideo({ src, poster, className, autoplay = false, playbackRate = 0.75, loop = false, normalizeToSeconds }: Props) {
+export default function ScrollVideo({ src, poster, className, autoplay = false, playbackRate = 0.75, loop = false, normalizeToSeconds, normalizeMobileSeconds }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [duration, setDuration] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   // Scroll-driven mode
   useEffect(() => {
@@ -40,6 +42,22 @@ export default function ScrollVideo({ src, poster, className, autoplay = false, 
     return () => cancelAnimationFrame(raf);
   }, [duration, autoplay]);
 
+  // Track mobile breakpoint (<= 640px)
+  useEffect(() => {
+    const mm = typeof window !== "undefined" ? window.matchMedia("(max-width: 640px)") : null;
+    if (!mm) return;
+    const update = () => setIsMobile(!!mm.matches);
+    update();
+    // Safari <14 uses addListener
+    if (typeof mm.addEventListener === "function") {
+      mm.addEventListener("change", update);
+      return () => mm.removeEventListener("change", update);
+    } else if (typeof (mm as any).addListener === "function") {
+      (mm as any).addListener(update);
+      return () => (mm as any).removeListener(update);
+    }
+  }, []);
+
   // Autoplay mode controls
   useEffect(() => {
     if (!autoplay) return;
@@ -49,8 +67,9 @@ export default function ScrollVideo({ src, poster, className, autoplay = false, 
       try {
         const d = vid.duration || duration;
         let rate = playbackRate;
-        if (normalizeToSeconds && d > 0) {
-          rate = d / normalizeToSeconds; // e.g., if d=10s and normalize=30s => 0.333x
+        const target = isMobile && normalizeMobileSeconds ? normalizeMobileSeconds : normalizeToSeconds;
+        if (target && d > 0) {
+          rate = d / target; // e.g., if d=10s and target=30s => 0.333x
         }
         // Clamp to reasonable bounds
         if (!isFinite(rate) || rate <= 0) rate = 0.1;
@@ -70,7 +89,7 @@ export default function ScrollVideo({ src, poster, className, autoplay = false, 
     const onMeta = () => setRate();
     vid.addEventListener("loadedmetadata", onMeta);
     return () => vid.removeEventListener("loadedmetadata", onMeta);
-  }, [autoplay, playbackRate, normalizeToSeconds, duration]);
+  }, [autoplay, playbackRate, normalizeToSeconds, normalizeMobileSeconds, duration, isMobile]);
 
   return (
     <div ref={containerRef} className={className}>
